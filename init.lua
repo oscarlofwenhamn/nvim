@@ -47,6 +47,8 @@ vim.o.confirm = true
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
+-- Note: This will clash with current GlazeWM config. Consolidate and decide which layer should
+-- own which modifier.
 vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
 vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
 vim.keymap.set({ 't', 'i' }, '<A-k>', '<C-\\><C-n><C-w>k')
@@ -100,9 +102,17 @@ vim.pack.add({
   'https://github.com/stevearc/quicker.nvim',
   -- Git integration
   'https://github.com/lewis6991/gitsigns.nvim',
+  -- Which-key
+  'https://github.com/folke/which-key.nvim',
+  -- Mini icons
+  'https://github.com/nvim-mini/mini.icons',
+  -- Nvim Web Devicons
+  'https://github.com/nvim-tree/nvim-web-devicons',
 })
-
 require('fzf-lua').setup { fzf_colors = true }
 require('mini.completion').setup {}
 require('quicker').setup {}
 require('gitsigns').setup {}
+require('which-key').setup{}
+require('mini.icons').setup{}
+require('nvim-web-devicons').setup{}
