@@ -108,6 +108,10 @@ vim.pack.add({
   'https://github.com/nvim-mini/mini.icons',
   -- Nvim Web Devicons
   'https://github.com/nvim-tree/nvim-web-devicons',
+  -- Mason (package manager for external binaries like LSPs)
+  'https://github.com/mason-org/mason.nvim',
+  -- GitHub Copilot
+  'https://github.com/github/copilot.vim',
 })
 require('fzf-lua').setup { fzf_colors = true }
 require('mini.completion').setup {}
@@ -116,3 +120,4 @@ require('gitsigns').setup {}
 require('which-key').setup{}
 require('mini.icons').setup{}
 require('nvim-web-devicons').setup{}
+require('mason').setup{}
