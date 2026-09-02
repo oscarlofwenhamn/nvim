@@ -96,28 +96,32 @@ vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
   -- Fuzzy picker
   'https://github.com/ibhagwan/fzf-lua',
-  -- Autocompletion
-  'https://github.com/nvim-mini/mini.completion',
   -- Enhanced quickfix/loclist
   'https://github.com/stevearc/quicker.nvim',
   -- Git integration
   'https://github.com/lewis6991/gitsigns.nvim',
   -- Which-key
   'https://github.com/folke/which-key.nvim',
-  -- Mini icons
-  'https://github.com/nvim-mini/mini.icons',
   -- Nvim Web Devicons
   'https://github.com/nvim-tree/nvim-web-devicons',
   -- Mason (package manager for external binaries like LSPs)
   'https://github.com/mason-org/mason.nvim',
   -- GitHub Copilot
   'https://github.com/github/copilot.vim',
+  -- Mini.nvim
+  'https://github.com/nvim-mini/mini.nvim',
 })
+
 require('fzf-lua').setup { fzf_colors = true }
 require('mini.completion').setup {}
+require('mini.icons').setup{}
+require('mini.comment').setup{}
 require('quicker').setup {}
 require('gitsigns').setup {}
 require('which-key').setup{}
-require('mini.icons').setup{}
 require('nvim-web-devicons').setup{}
 require('mason').setup{}
+
+
+require('snacksconf')
+require('theme')
