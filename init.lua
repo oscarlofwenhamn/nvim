@@ -39,24 +39,6 @@ vim.o.list = true -- Show <tab> and trailing spaces.
 -- instead raise a dialog asking if you wish to save the current file(s). See `:h 'confirm'`
 vim.o.confirm = true
 
--- KEYMAPS
---
--- See `:h vim.keymap.set()`, `:h mapping`, `:h keycodes`
-
--- Use <Esc> to exit terminal mode
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
-
--- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
--- Note: This will clash with current GlazeWM config. Consolidate and decide which layer should
--- own which modifier.
-vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
-vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
-vim.keymap.set({ 't', 'i' }, '<A-k>', '<C-\\><C-n><C-w>k')
-vim.keymap.set({ 't', 'i' }, '<A-l>', '<C-\\><C-n><C-w>l')
-vim.keymap.set({ 'n' }, '<A-h>', '<C-w>h')
-vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j')
-vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k')
-vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
 
 -- AUTOCOMMANDS (EVENT HANDLERS)
 --
@@ -122,6 +104,7 @@ require('which-key').setup{}
 require('nvim-web-devicons').setup{}
 require('mason').setup{}
 
-
+-- External configuration files, see ./lua
 require('snacksconf')
 require('theme')
+require('keymaps')
